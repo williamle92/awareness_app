@@ -6,8 +6,9 @@ import HomeIcon from "@material-ui/icons/Home";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
 import InsertEmoticonSharpIcon from "@material-ui/icons/InsertEmoticonSharp";
-// import AccountCircleSharpIcon from '@material-ui/icons/AccountCircleSharp';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { Avatar } from "@material-ui/core";
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 export default class Header extends Component {
   render() {
@@ -36,6 +37,14 @@ export default class Header extends Component {
           <div className="header__option">
             <InsertEmoticonSharpIcon fontSize="large" />
           </div>
+          
+          <div className="header__option">
+            <VpnKeyIcon fontSize="large" />
+          </div>
+          <div className="header__option">
+            <ExitToAppIcon fontSize="large" />
+          </div>
+
         </div>
         <div className="header__right">
           <div className="header__info">
