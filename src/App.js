@@ -1,5 +1,7 @@
 import Header from './Header';
 import './App.css';
+import Sidebar from './Sidebar'
+
 
 function App() {
   return (
@@ -7,10 +9,15 @@ function App() {
 
 
      <Header />
-     { /* App Body */}
+
+
+     <div className="body">
+     <Sidebar />
      { /* Sidebar */}
      { /* Feed */}
      {/* Widgets*/}
+
+     </div>
     </div>
   );
 }
