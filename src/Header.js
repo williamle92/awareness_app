@@ -6,12 +6,16 @@ import HomeIcon from "@material-ui/icons/Home";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
 import InsertEmoticonSharpIcon from "@material-ui/icons/InsertEmoticonSharp";
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { Avatar } from "@material-ui/core";
-import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import VpnKeyIcon from "@material-ui/icons/VpnKey";
 
-export default class Header extends Component {
-  render() {
+import userEvent from "@testing-library/user-event";
+import { useStateValue } from "./StateProvider";
+
+function Header(){
+    const [{user}, dispatch] = useStateValue();
+    
     return (
       <div className="header">
         <div className="header__left">
@@ -37,22 +41,22 @@ export default class Header extends Component {
           <div className="header__option">
             <InsertEmoticonSharpIcon fontSize="large" />
           </div>
-          
+    
           <div className="header__option">
             <VpnKeyIcon fontSize="large" />
           </div>
           <div className="header__option">
             <ExitToAppIcon fontSize="large" />
           </div>
-
         </div>
         <div className="header__right">
           <div className="header__info">
-            <Avatar />
-            <h4>williaammm</h4>
+            <Avatar src={user.photoURL} />
+            <h4>{user.displayName}</h4>
           </div>
         </div>
       </div>
     );
-  }
-}
+    }
+export default Header;
+    

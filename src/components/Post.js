@@ -1,25 +1,36 @@
 import React, { useState } from "react";
 import "./Post.css";
 import { Avatar } from "@material-ui/core";
+import { useStateValue } from "../StateProvider";
+import db from "../firebase";
+import firebase from "firebase";
 
 function Post() {
   const [input, setInput] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+  const [{ user }, dispatch] = useStateValue();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    db.collection("posts").add({
+      message: input,
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      profilePic: user.photoURL,
+      username: user.displayName,
+      postImage: imageUrl,
+    });
 
-    setInput('')
-    setImageUrl('')
+    setInput("");
+    setImageUrl("");
   };
 
   return (
     <div className="post">
       <div className="post__top">
-        <Avatar />
+        <Avatar src={user.photoURL} />
         <form>
           <input
-            placeholder={`What are you most thankful for?`}
+            placeholder={`What are you most thankful for ${user.displayName}?`}
             value={input}
             onChange={(e) => {
               setInput(e.target.value);

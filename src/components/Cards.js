@@ -1,35 +1,36 @@
 import React from "react";
 import "./Cards.css";
-import {Avatar} from '@material-ui/core'
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import CommentIcon from '@material-ui/icons/Comment';
+import { Avatar } from "@material-ui/core";
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
+import CommentIcon from "@material-ui/icons/Comment";
+import { useStateValue } from "../StateProvider";
 
-function Cards({ profilePic, image, username, timestamp, message }) {
+function Cards({ profilePic, postImage, username, timestamp, message }) {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="card">
       <div className="card__top">
-      <Avatar src={profilePic} className="card__avatar" />
-      <div className="card__topInfo">
-        <h3>{username}</h3>
-        <p>Timestamp... </p>
-
-      </div>
+        <Avatar src={profilePic} className="card__avatar" />
+        <div className="card__topInfo">
+          <h3>{username}</h3>
+          <p>{new Date(timestamp?.toDate()).toUTCString()} </p>
+        </div>
       </div>
       <div className="card__bottom">
-          <p>{message}</p> 
+        <p>{message}</p>
       </div>
       <div className="card__image">
-          <img src={image} alt="card__image"/>
+        <img src={postImage} alt="" />
       </div>
       <div className="card__options">
-      <div className="card__option">
+        <div className="card__option">
           <ThumbUpIcon />
-            <p>Like</p>          
-          </div>
-      <div className="post__option">
+          <p>Like</p>
+        </div>
+        <div className="card__option">
           <CommentIcon />
-            <p>Comment</p>          
-          </div>
+          <p>Comment</p>
+        </div>
       </div>
     </div>
   );

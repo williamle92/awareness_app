@@ -1,10 +1,20 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import firebase from "firebase";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCx6kNhFrgz9-jfCF3Kxy-uipzMs2O-KiA",
-  authDomain: "awarenessapp-cfc64.firebaseapp.com",
-  projectId: "awarenessapp-cfc64",
-  storageBucket: "awarenessapp-cfc64.appspot.com",
-  messagingSenderId: "763572885991",
-  appId: "1:763572885991:web:62f9700fb8a7b7b74c4542",
-  measurementId: "G-HQ0FCMQ6K7",
-};
+    apiKey: "AIzaSyAv6__71Q8cjrKjBrFOBV3b_FsLXufxmyg",
+    authDomain: "awareness-app-d3135.firebaseapp.com",
+    projectId: "awareness-app-d3135",
+    storageBucket: "awareness-app-d3135.appspot.com",
+    messagingSenderId: "198441776201",
+    appId: "1:198441776201:web:f75fed0202f646585f7b98",
+    measurementId: "G-M4MRMX5FN9"
+  };
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+const db = firebaseApp.firestore();
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
+
+export { auth, provider };
+export default db;

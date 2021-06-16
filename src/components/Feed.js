@@ -1,24 +1,46 @@
-import React from 'react'
-import './Feed.css'
-import Post from './Post'
-import Cards from './Cards'
+import React from "react";
+import "./Feed.css";
+import Post from "./Post";
+import Cards from "./Cards";
+import { useState } from "react";
+import { useEffect } from "react";
+import db from "../firebase";
 
 function Feed() {
-    const profilePic = 'https://avatars.githubusercontent.com/u/81194035?v=4';
-    const image1 = 'https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80'
-    const username = 'williamm92'
-    const message = 'life is good'
-    return (
-        <div className="feed">
-            <img className='image' src="https://cdn.dribbble.com/users/63407/screenshots/6324540/dribbble_reasoning_corner.png?compress=1"/>
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    db.collection("posts")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setPosts(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        )
+      );
+  }, []);
 
-            <Post />
-            <Cards image={image1} username={username} message={message} profilePic={profilePic} />
-        </div>
-    )
+  return (
+    <div className="feed">
+      <img
+        className="image"
+        src="https://cdn.dribbble.com/users/63407/screenshots/6324540/dribbble_reasoning_corner.png?compress=1"
+      />
+
+      <Post />
+      {posts.map((post) => (
+        <Cards
+          key={post.id}
+          profilePic={post.data.profilePic}
+          postImage={post.data.postImage}
+          message={post.data.message}
+          username={post.data.username}
+          timestamp={post.data.timestamp}
+        />
+      ))}
+    </div>
+  );
 }
 
-export default Feed
-
-
-
+export default Feed;
