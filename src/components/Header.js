@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./photos/noBlogo.png";
+import logo from "../photos/noBlogo.png";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import HomeIcon from "@material-ui/icons/Home";
@@ -9,9 +9,9 @@ import InsertEmoticonSharpIcon from "@material-ui/icons/InsertEmoticonSharp";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { Avatar } from "@material-ui/core";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
+import { Link } from 'react-router-dom'
 
-import userEvent from "@testing-library/user-event";
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "../StateProvider";
 
 function Header(){
     const [{user}, dispatch] = useStateValue();
@@ -32,9 +32,11 @@ function Header(){
           >
             <HomeIcon fontSize="large" />
           </div>
+          <Link to='/todotracker'>
           <div className="header__option">
             <DashboardIcon fontSize="large" />
           </div>
+          </Link>
           <div className="header__option">
             <MenuBookIcon fontSize="large" />
           </div>
@@ -43,7 +45,10 @@ function Header(){
           </div>
     
           <div className="header__option">
+           <Link to="/login">
             <VpnKeyIcon fontSize="large" />
+
+           </Link>
           </div>
           <div className="header__option">
             <ExitToAppIcon fontSize="large" />
