@@ -4,14 +4,14 @@ import youtube from "../api/youtube";
 import VideoList from "../components/VideoList";
 import VideoDetail from "../components/VideoDetail";
 import Grid from "@material-ui/core/Grid";
-import Divider from '@material-ui/core/Divider';
-import Header from "../components/Header";
+import Divider from "@material-ui/core/Divider";
+import Sidebar from "../components/Sidebar";
 
 class Meditate extends React.Component {
   state = { videos: [], selectedVideo: null };
 
   componentDidMount() {
-    this.onTermSubmit("meditation");
+    this.onTermSubmit("10 minute guided meditation");
   }
   onTermSubmit = async (term) => {
     const response = await youtube.get("/search", {
@@ -30,13 +30,14 @@ class Meditate extends React.Component {
   };
   render() {
     return (
-        <div>
+      <div>
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <SearchBar onTermSubmit={this.onTermSubmit} />
           </Grid>
-          <Divider/>
-          <Grid container direction="column" xs={6}>
+          <Divider />
+          <Grid container direction="column" xs={5} className="sidebarvideo">
+              <Sidebar />
             <VideoDetail video={this.state.selectedVideo} />
           </Grid>
           <Grid item xs={6}>

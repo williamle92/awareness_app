@@ -26,12 +26,14 @@ function Header(){
           </div>
         </div>
         <div className="header__center">
+          <Link to="/">
           <div
             className="header__option 
           header__option--active"
           >
             <HomeIcon fontSize="large" />
           </div>
+          </Link>
           <Link to='/todotracker'>
           <div className="header__option">
             <DashboardIcon fontSize="large" />

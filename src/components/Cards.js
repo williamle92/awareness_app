@@ -3,10 +3,10 @@ import "./Cards.css";
 import { Avatar } from "@material-ui/core";
 import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import CommentIcon from "@material-ui/icons/Comment";
-import { useStateValue } from "../StateProvider";
+
 
 function Cards({ profilePic, postImage, username, timestamp, message }) {
-  const [{ user }, dispatch] = useStateValue();
+  
   return (
     <div className="card">
       <div className="card__top">

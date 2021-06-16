@@ -1,6 +1,6 @@
 import React from "react";
+import './VideoItem.css'
 
-import { Card } from "@material-ui/core/Card";
 
 const VideoItem = ({ video, onVideoSelect }) => {
   return (
