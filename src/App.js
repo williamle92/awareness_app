@@ -4,11 +4,14 @@ import Login from "./views/Login";
 import { useStateValue } from "./StateProvider";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Video from "./views/Meditate";
+import { CreateLog } from "./views/CreateLog";
 
-import socialMedia from "./views/socialMedia";
 import Dashboard from "./views/Dashboard";
 import Calendar from './components/Calendar'
 import SocialMedia from "./views/socialMedia";
+import DiaryLogs from "./views/Diarylogs";
+import { EditJournals } from "./views/EditJournal";
+
 
 function App() {
   const [{ user }] = useStateValue();
@@ -27,7 +30,9 @@ function App() {
               <Route path="/login" exact component={Login} />
               <Route path='/dashboard' exact component={SocialMedia}/>
               <Route path='/calendar' exact component={Calendar}/>
-         
+              <Route path='/createLog' exact component={CreateLog}/>
+              <Route path="/diarylogs" exact component={DiaryLogs}/>
+              <Route path="/editjournal" exact component={EditJournals} />
 
             </Switch>
           </BrowserRouter>

@@ -1,0 +1,15 @@
+.picture {
+    display: flex;
+    height: 500px;
+    width: 100vmin;
+    margin-bottom: 50px;
+}
+
+
+.title {
+    width: 500px;
+}
+
+.buttons {
+    margin-top: 30px;
+}

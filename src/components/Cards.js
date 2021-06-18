@@ -1,8 +1,7 @@
 import React from "react";
 import "./Cards.css";
 import { Avatar } from "@material-ui/core";
-import ThumbUpIcon from "@material-ui/icons/ThumbUp";
-import CommentIcon from "@material-ui/icons/Comment";
+
 
 
 function Cards({ profilePic, postImage, username, timestamp, message }) {
@@ -23,14 +22,7 @@ function Cards({ profilePic, postImage, username, timestamp, message }) {
         <img src={postImage} alt="" />
       </div>
       <div className="card__options">
-        <div className="card__option">
-          <ThumbUpIcon />
-          <p>Like</p>
-        </div>
-        <div className="card__option">
-          <CommentIcon />
-          <p>Comment</p>
-        </div>
+
       </div>
     </div>
   );

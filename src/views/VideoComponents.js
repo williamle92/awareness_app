@@ -1,4 +1,4 @@
-import { Divider, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import React, { Component } from "react";
 import "./VideoComponents.css";
 import VideoDetail from "../components/VideoDetail";
