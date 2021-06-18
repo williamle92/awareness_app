@@ -8,6 +8,7 @@ import Video from "./views/Meditate";
 import socialMedia from "./views/socialMedia";
 import Dashboard from "./views/Dashboard";
 import Calendar from './components/Calendar'
+import SocialMedia from "./views/socialMedia";
 
 function App() {
   const [{ user }] = useStateValue();
@@ -21,10 +22,10 @@ function App() {
           <Header />
         
             <Switch>
-              <Route path='/' exact component={socialMedia}/>
+              <Route path='/' exact component={Dashboard}/>
               <Route path="/meditate" exact component={Video} />
               <Route path="/login" exact component={Login} />
-              <Route path='/dashboard' exact component={Dashboard}/>
+              <Route path='/dashboard' exact component={SocialMedia}/>
               <Route path='/calendar' exact component={Calendar}/>
          
 

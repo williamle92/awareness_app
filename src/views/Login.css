@@ -19,13 +19,17 @@
 
 .login > button {
     width: 300px;
-   background-color: #B39DDB;
+   background-color: #008CBA;
     color: #eff2f5;
     font-weight: 800;
 }
 
 .login > button:hover {
-    background-color: white;
-    
+    background-color: white;   
+}
 
+
+.meditate > img {
+    height: 1039px;
+    width: 100%;
 }
