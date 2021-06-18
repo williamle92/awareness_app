@@ -9,7 +9,7 @@ import socialMedia from "./views/socialMedia";
 import Dashboard from "./views/Dashboard";
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
   return (
     <div className="app">
       {!user ? (
@@ -25,6 +25,7 @@ function App() {
               <Route path="/login" exact component={Login} />
               <Route path='/todotracker' exact component={TodoTracker}/>
               <Route path='dashboard' exact component={Dashboard}/>
+
             </Switch>
           </BrowserRouter>
         </>

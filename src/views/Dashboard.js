@@ -1,17 +1,18 @@
-import React, {useState, useEffect} from 'react'
+import axios from "axios";
+import React, { Component } from "react";
 
-function Dashboard() {
-    const getAffirmation = async ()=> {
-        const data = await fetch('https://www.affirmations.dev/');
-        console.log(data)
-    }
-    return (
-        <div>
-            
+export default class Dashboard extends Component {
+  state = { quote: "" };
+  getAffirmation = async () => {
+    const response = await axios.get("https://www.affirmations.dev/");
+    console.log(response);
+  };
 
-        
-        </div>
-    )
+  componentDidMount() {
+    this.getAffirmation();
+  }
+
+  render() {
+    return <div></div>;
+  }
 }
-
-export default Dashboard

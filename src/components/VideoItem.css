@@ -6,9 +6,10 @@
   
   .video-item.item img {
     max-width: 300px;
+    height: 150px;
   }
 
   .content {
-      width: 200px;
+      width: 300px;
   }
   

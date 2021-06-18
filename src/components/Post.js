@@ -8,7 +8,7 @@ import firebase from "firebase";
 function Post() {
   const [input, setInput] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
 
   const handleSubmit = (e) => {
     e.preventDefault();

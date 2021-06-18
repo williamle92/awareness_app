@@ -8,7 +8,7 @@ import { useStateValue } from "../StateProvider";
 import { Link } from 'react-router-dom'
 
 function Sidebar() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user } ] = useStateValue();
   return (
     <div className="sidebar">
       <SidebarRow title={user.displayName} src={user.photoURL} />
