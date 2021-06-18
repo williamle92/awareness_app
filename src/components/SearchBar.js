@@ -1,5 +1,6 @@
 import React from "react";
 import TextField from '@material-ui/core/TextField';
+import './SearchBar.css'
 
 class SearchBar extends React.Component {
     state = { term: '' }
@@ -15,7 +16,7 @@ class SearchBar extends React.Component {
     };
   render() {
     return (
-      <div className="search-bar ui segment">
+      <div className="search_bar ">
         <form onSubmit={this.onFormSubmit}  noValidate autoComplete="off" >
           <div className="field">
             <label> Video Search</label>

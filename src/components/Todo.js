@@ -1,47 +1,32 @@
 
-import React, { useState } from 'react';
-import TodoForm from './TodoForm';
-import { RiCloseCircleLine } from 'react-icons/ri';
-import { TiEdit } from 'react-icons/ti';
+import React from "react";
+import { ListItem, ListItemText, Button } from "@material-ui/core";
+import db from '../firebase'
 
-const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
-  const [edit, setEdit] = useState({
-    id: null,
-    value: ''
-  });
-
-  const submitUpdate = value => {
-    updateTodo(edit.id, value);
-    setEdit({
-      id: null,
-      value: ''
+export default function TodoListItem({ todo, inprogress, id }) {
+  function toggleInProgress() {
+    db.collection("todos").doc(id).update({
+      inprogress: !inprogress,
     });
-  };
-
-  if (edit.id) {
-    return <TodoForm edit={edit} onSubmit={submitUpdate} />;
   }
 
-  return todos.map((todo, index) => (
-    <div
-      className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
-      key={index}
-    >
-      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
-        {todo.text}
-      </div>
-      <div className='icons'>
-        <RiCloseCircleLine
-          onClick={() => removeTodo(todo.id)}
-          className='delete-icon'
-        />
-        <TiEdit
-          onClick={() => setEdit({ id: todo.id, value: todo.text })}
-          className='edit-icon'
-        />
-      </div>
-    </div>
-  ));
-};
+  function deleteTodo() {
+    db.collection("todos").doc(id).delete();
+  }
 
-export default Todo;
+  return (
+    <div style={{ display: "flex" }}>
+      <ListItem>
+        <ListItemText
+          primary={todo}
+          secondary={inprogress ? "In Progress" : "Completed"}
+        />
+      </ListItem>
+
+      <Button onClick={toggleInProgress}>
+        {inprogress ? "Done" : "UnDone"}
+      </Button>
+      <Button onClick={deleteTodo}>X</Button>
+    </div>
+  );
+}

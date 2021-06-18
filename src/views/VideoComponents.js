@@ -1,9 +1,10 @@
 import { Divider, Grid } from "@material-ui/core";
 import React, { Component } from "react";
-import "./VideoComponents.css"
+import "./VideoComponents.css";
 import VideoDetail from "../components/VideoDetail";
 import VideoList from "../components/VideoList";
 import youtube from "../api/youtube";
+import SearchBar from "../components/SearchBar";
 
 export default class VideoComponents extends Component {
   state = { videos: [], selectedVideo: null };
@@ -28,12 +29,17 @@ export default class VideoComponents extends Component {
   render() {
     return (
       <div className="component">
+          <Grid container>
+          <SearchBar />
+
+          </Grid>
         <Grid
           container
           direction="row"
           justify="space-between"
           alignItems="flex-start"
         >
+
           <Grid item direction="column" xs={8} className="sidebarvideo">
             <VideoDetail video={this.state.selectedVideo} />
           </Grid>
