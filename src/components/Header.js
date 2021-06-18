@@ -47,7 +47,7 @@ function Header(){
             <DashboardIcon fontSize="large" />
           </div>
           </Link>
-          <Link to="/createlog">
+          <Link to="/diarylogs">
           <div className="header__option">
             <MenuBookIcon fontSize="large" />
           </div>

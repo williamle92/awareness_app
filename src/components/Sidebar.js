@@ -16,7 +16,7 @@ function Sidebar() {
       <Link to="/meditate">
         <SidebarRow title="Meditate" Icon={AllInclusiveIcon} />
       </Link>
-      <Link to="/createlog">
+      <Link to="/diarylogs">
         <SidebarRow title="Journal" Icon={BorderColorOutlinedIcon} />
       </Link>
       <a href="https://github.com/williamle92/awareness_app.git">

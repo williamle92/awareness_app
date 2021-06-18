@@ -32,7 +32,7 @@ function App() {
               <Route path='/calendar' exact component={Calendar}/>
               <Route path='/createLog' exact component={CreateLog}/>
               <Route path="/diarylogs" exact component={DiaryLogs}/>
-              <Route path="/editjournal" exact component={EditJournals} />
+              
 
             </Switch>
           </BrowserRouter>
