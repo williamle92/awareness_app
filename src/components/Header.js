@@ -47,19 +47,24 @@ function Header(){
             <DashboardIcon fontSize="large" />
           </div>
           </Link>
+          <Link to="/journal">
           <div className="header__option">
             <MenuBookIcon fontSize="large" />
           </div>
+          
+          </Link>
+          <Link to="/meditate">
           <div className="header__option">
             <InsertEmoticonSharpIcon fontSize="large" />
           </div>
-    
-          <div className="header__option">
-           <Link to="/login">
-            <VpnKeyIcon fontSize="large" />
 
-           </Link>
+          </Link>
+    
+           <Link to="/login">
+          <div className="header__option">
+            <VpnKeyIcon fontSize="large" />
           </div>
+           </Link>
           <Button type='submit' onClick={signOut}>
           <div className="header__option">
             <ExitToAppIcon fontSize="large" />

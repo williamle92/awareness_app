@@ -2,3 +2,11 @@
     padding : 25px 10px;
     flex: .33
 }
+
+a {
+    color: lightskyblue;
+  }
+
+a:active{
+    text-decoration: none;
+}
