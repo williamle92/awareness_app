@@ -10,7 +10,7 @@ import Dashboard from "./views/Dashboard";
 import Calendar from './components/Calendar'
 import SocialMedia from "./views/socialMedia";
 import DiaryLogs from "./views/Diarylogs";
-import { EditJournals } from "./views/EditJournal";
+
 
 
 function App() {

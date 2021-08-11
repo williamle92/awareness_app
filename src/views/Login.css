@@ -7,8 +7,8 @@
 
 
 .login > div > img {
-    object-fit: contain;
-    height: 500px;
+    display: flex;
+    height: 300px;
     width: 600px;
 }
 
@@ -29,7 +29,9 @@
 }
 
 
+
 .meditate > img {
-    height: 1039px;
-    width: 100%;
+    object-fit: cover;
+    width: 49.6vw;
+    height: 99.6vh;
 }
